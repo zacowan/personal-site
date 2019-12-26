@@ -7,7 +7,7 @@ const RootContainer = styled.div`
   width: 100%;
   height: 280px;
   padding: 20px;
-  background-color: var(--white);
+  background-color: ${props => props.theme.colors.white};
   border-radius: 10px;
   box-sizing: border-box;
   display: flex;
@@ -45,8 +45,8 @@ const Button = styled(Link)`
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--white);
-  background-color: var(--dark);
+  color: ${props => props.theme.colors.white};
+  background-color: ${props => props.theme.colors.dark};
   font-family: Glacial Indifference;
   font-weight: bold;
   text-transform: uppercase;
@@ -60,10 +60,10 @@ const Button = styled(Link)`
     cursor: pointer;
     -webkit-transform: translate(0px, -0.25em);
     transform: translate(0px, -0.25em);
-    background-color: var(--black);
+    background-color: ${props => props.theme.colors.black};
   }
   &:active {
-    background-color: var(--dark);
+    background-color: ${props => props.theme.colors.dark};
   }
 `
 

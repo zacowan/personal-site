@@ -4,7 +4,7 @@ import scrollTo from "gatsby-plugin-smoothscroll"
 
 // Styled Components
 const RootContainer = styled.div`
-  background-color: var(--black);
+  background-color: ${props => props.theme.colors.black};
   border-radius: 1em;
   width: 2.5em;
   height: 5em;
@@ -31,7 +31,7 @@ const RootContainer = styled.div`
 `
 
 const Arrow = styled.svg`
-  fill: var(--white);
+  fill: ${props => props.theme.colors.white};
   width: 60%;
   @-webkit-keyframes cta-button-updown {
     0% {

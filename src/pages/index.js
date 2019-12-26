@@ -1,6 +1,5 @@
 import React from "react"
 import styled from "styled-components"
-import { Container as Grid, Row, Col, Hidden } from "react-grid-system"
 
 import Layout, { TextLayout } from "../components/layout"
 import SEO from "../components/seo"
@@ -9,6 +8,7 @@ import HomeHero from "../components/home-hero"
 import BondOverlay from "../components/bond-overlay"
 import AboutIllustration from "../components/about-illustration"
 import Card from "../components/card"
+import Hidden from "../components/hidden"
 
 // Styled Components
 const Hero = styled.div`
@@ -48,11 +48,36 @@ const AboutSubtitle = styled.h4`
   font-size: 2.7em;
 `
 
+const AIImage = styled(AboutIllustration)`
+  ${props => props.theme.breakpoints.xs} {
+    display: none;
+  }
+  ${props => props.theme.breakpoints.sm} {
+    display: none;
+  }
+  ${props => props.theme.breakpoints.md} {
+    display: inherit;
+  }
+`
+
 const AboutIllustrationContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
   padding-bottom: 30px;
+`
+
+const AboutGrid = styled.div`
+  display: grid;
+  grid-template-columns: 1 auto;
+  grid-gap: 30px;
+  justify-items: center;
+  ${props => props.theme.breakpoints.md} {
+    grid-template-columns: repeat(2, 50%);
+  }
+  ${props => props.theme.breakpoints.lg} {
+    grid-template-columns: repeat(3, 33%);
+  }
 `
 
 const IndexPage = () => (
@@ -73,16 +98,14 @@ const IndexPage = () => (
       <TextLayout>
         <AboutTitle>About Me</AboutTitle>
         <AboutIllustrationContainer>
-          <Hidden xs sm>
-            <AboutIllustration
-              style={{
-                width: "80em",
-                margin: 40,
-                marginLeft: 0,
-                marginBottom: 80,
-              }}
-            />
-          </Hidden>
+          <AIImage
+            style={{
+              width: "80em",
+              margin: 40,
+              marginLeft: 0,
+              marginBottom: 80,
+            }}
+          />
 
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -95,24 +118,23 @@ const IndexPage = () => (
           </p>
         </AboutIllustrationContainer>
         <AboutSubtitle>Work Experience</AboutSubtitle>
-        <Grid>
-          <Row>
-            <Col style={{ marginTop: 30 }} sm={12} md={6} lg={4}>
-              <Card
-                title="American Express"
-                subtitle="Software Engineer"
-                content="Internship - Summer 2020"
-              />
-            </Col>
-            <Col style={{ marginTop: 30 }} sm={12} md={6} lg={4}>
-              <Card
-                title="Lockheed Martin"
-                subtitle="Software Engineer"
-                content="Internship - Summer 2019"
-              />
-            </Col>
-          </Row>
-        </Grid>
+        <AboutGrid>
+          <Card
+            title="American Express"
+            subtitle="Software Engineer"
+            content="Internship - Summer 2020"
+          />
+          <Card
+            title="Lockheed Martin"
+            subtitle="Software Engineer"
+            content="Internship - Summer 2019"
+          />
+          <Card
+            title="Lockheed Martin"
+            subtitle="Software Engineer"
+            content="Internship - Summer 2019"
+          />
+        </AboutGrid>
       </TextLayout>
     </About>
   </Layout>

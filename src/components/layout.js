@@ -8,12 +8,31 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
+import { ThemeProvider } from "styled-components"
 
 // Custom Components
 import Nav from "./nav"
 
 // Styles
 import "./layout.css"
+
+// Theme
+const theme = {
+  breakpoints: {
+    xs: `@media only screen and (max-width: 600px)`,
+    sm: `@media only screen and (min-width: 600px)`,
+    md: `@media only screen and (min-width: 768px)`,
+    lg: `@media only screen and (min-width: 992px)`,
+    xl: `@media only screen and (min-width: 1200px)`,
+  },
+  colors: {
+    black: "#1a1a1a",
+    white: "#f7f7f7",
+    dark: "#454955",
+    light: "#f3eff5",
+    accent: "#a09abc",
+  },
+}
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -27,10 +46,9 @@ const Layout = ({ children }) => {
   `)
 
   return (
-    <>
+    <ThemeProvider theme={theme}>
       <div
         style={{
-          margin: `0 auto`,
           padding: `0px 1.0875rem 1.45rem`,
           paddingTop: 0,
         }}
@@ -41,7 +59,7 @@ const Layout = ({ children }) => {
           <TextLayout>© {new Date().getFullYear()}, Zachary Cowan.</TextLayout>
         </footer>
       </div>
-    </>
+    </ThemeProvider>
   )
 }
 
@@ -54,7 +72,6 @@ const TextLayout = ({ children }) => {
     <>
       <div
         style={{
-          padding: `0px 1.0875rem 1.45rem`,
           margin: `0 auto`,
           maxWidth: 720,
         }}
