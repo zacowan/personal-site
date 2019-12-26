@@ -1,18 +1,19 @@
 import React from "react"
 import styled from "styled-components"
+import { Link } from "gatsby"
 
 // Styled Components
 const RootContainer = styled.div`
   width: 100%;
   height: 280px;
   padding: 20px;
-  background-color: #f7f7f7;
+  background-color: var(--white);
   border-radius: 10px;
   box-sizing: border-box;
   display: flex;
   flex-flow: column;
-  -webkit-box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.25);
-  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.25);
+  -webkit-box-shadow: 0px 4px 20px 2px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 4px 20px 2px rgba(0, 0, 0, 0.25);
   user-select: none;
   cursor: default;
   transition: transform 0.5s;
@@ -40,12 +41,12 @@ const Content = styled.p`
   font-size: 0.8em;
 `
 
-const Button = styled.div`
+const Button = styled(Link)`
   display: flex;
   align-items: center;
   justify-content: center;
   color: var(--white);
-  background-color: var(--black);
+  background-color: var(--dark);
   font-family: Glacial Indifference;
   font-weight: bold;
   text-transform: uppercase;
@@ -54,14 +55,15 @@ const Button = styled.div`
   border-radius: 4px;
   font-size: 0.8em;
   transition: transform 0.2s, background-color 0.2s;
+  text-decoration: none;
   &:hover {
     cursor: pointer;
     -webkit-transform: translate(0px, -0.25em);
     transform: translate(0px, -0.25em);
-    background-color: black;
+    background-color: var(--black);
   }
   &:active {
-    background-color: var(--black);
+    background-color: var(--dark);
   }
 `
 

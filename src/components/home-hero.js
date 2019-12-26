@@ -16,7 +16,7 @@ const HeroText = styled.h1`
 const Dot = styled(HeroText)`
   position: absolute;
   right: -0.2em;
-  color: red;
+  color: var(--accent);
 `
 
 const HomeHero = () => (

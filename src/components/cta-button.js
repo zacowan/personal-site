@@ -17,16 +17,16 @@ const RootContainer = styled.div`
   transition: transform 0.2s, box-shadow 0.2s;
   transition: transform 0.2s, box-shadow 0.2s, -webkit-transform 0.2s,
     -webkit-box-shadow 0.2s;
-  -webkit-box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.4);
-  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.4);
+  -webkit-box-shadow: 0px 4px 20px 3px rgba(0, 0, 0, 0.4);
+  box-shadow: 0px 4px 20px 3px rgba(0, 0, 0, 0.4);
   &:hover {
     cursor: pointer;
     -webkit-transform: translate(0px, -0.25em);
     transform: translate(0px, -0.25em);
   }
   &:active {
-    -webkit-box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4);
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4);
+    -webkit-box-shadow: 0px 4px 10px 3px rgba(0, 0, 0, 0.4);
+    box-shadow: 0px 4px 10px 3px rgba(0, 0, 0, 0.4);
   }
 `
 

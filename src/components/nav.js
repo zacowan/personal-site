@@ -1,7 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
 import styled from "styled-components"
-import { useStaticQuery, graphql } from "gatsby"
 
 const RootContainer = styled.div`
   padding: 2em;

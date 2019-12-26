@@ -3,7 +3,10 @@ html {
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
   --black: #1a1a1a;
+  --dark: #454955;
   --white: #f7f7f7;
+  --light: #f3eff5;
+  --accent: #a09abc;
 }
 body {
   margin: 0;
