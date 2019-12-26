@@ -1,5 +1,4 @@
 import React from "react"
-import PropTypes from "prop-types"
 import { Link } from "gatsby"
 import styled from "styled-components"
 import { useStaticQuery, graphql } from "gatsby"
@@ -47,13 +46,27 @@ const paths = [
     label: "about",
     path: "/",
   },
+  {
+    label: "projects",
+    path: "/",
+  },
+  {
+    label: "insights",
+    path: "/",
+  },
+  {
+    label: "contact",
+    path: "/",
+  },
 ]
 
 const Nav = () => {
   return (
     <RootContainer>
       {paths.map(path => (
-        <NavLink to={path.path}>{path.label}</NavLink>
+        <NavLink key={path.label} to={path.path}>
+          {path.label}
+        </NavLink>
       ))}
     </RootContainer>
   )

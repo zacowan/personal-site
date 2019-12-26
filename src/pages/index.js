@@ -2,19 +2,20 @@ import React from "react"
 import styled from "styled-components"
 
 import Layout from "../components/layout"
-import Image from "../components/image"
 import SEO from "../components/seo"
 import CTAButton from "../components/cta-button"
+import HomeHero from "../components/home-hero"
+import BondOverlay from "../components/bond-overlay"
 
 // Styled Components
-const Container = styled.div`
+const Hero = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
   min-height: 100vh;
 `
 
-const HeroContainer = styled.div`
+const SubHero = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -22,18 +23,6 @@ const HeroContainer = styled.div`
   width: 50%;
   user-select: none;
   cursor: default;
-`
-
-const CTAContainer = styled.div`
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  flex-direction: column;
-  width: 50%;
-`
-
-const HeroText = styled.h1`
-  font-size: 20em;
 `
 
 const HeroSubtitle = styled.p`
@@ -44,16 +33,17 @@ const HeroSubtitle = styled.p`
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
-    <Container>
-      <HeroContainer>
-        <HeroText>ZC.</HeroText>
+    <Hero>
+      <SubHero>
+        <HomeHero />
         <HeroSubtitle>Software Engineer</HeroSubtitle>
         <HeroSubtitle>Coming soon</HeroSubtitle>
-      </HeroContainer>
-      <CTAContainer>
+      </SubHero>
+      <BondOverlay />
+      <SubHero>
         <CTAButton></CTAButton>
-      </CTAContainer>
-    </Container>
+      </SubHero>
+    </Hero>
   </Layout>
 )
 

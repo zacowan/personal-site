@@ -1,9 +1,6 @@
 import React from "react"
 import styled from "styled-components"
 
-// Animations
-import UpDown from "../animations/up-down"
-
 // Styled Components
 const RootContainer = styled.div`
   background-color: var(--black);
@@ -14,19 +11,49 @@ const RootContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: transform 0.2s;
-  ${"" /* filter: drop-shadow(0px 4px 4px var(--black)); */}
+  -webkit-transition: -webkit-transform 0.2s, -webkit-box-shadow 0.2s;
+  transition: -webkit-transform 0.2s, -webkit-box-shadow 0.2s;
+  transition: transform 0.2s, box-shadow 0.2s;
+  transition: transform 0.2s, box-shadow 0.2s, -webkit-transform 0.2s,
+    -webkit-box-shadow 0.2s;
+  -webkit-box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.4);
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.4);
   &:hover {
     cursor: pointer;
-    transform: scale(1.1);
+    -webkit-transform: translate(0px, -0.25em);
+    transform: translate(0px, -0.25em);
+  }
+  &:active {
+    -webkit-box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4);
   }
 `
 
 const Arrow = styled.svg`
   fill: var(--white);
   width: 60%;
-  animation: ${UpDown} 2s ease-in-out 0s infinite;
+  @-webkit-keyframes cta-button-updown {
+    0% {
+      -webkit-transform: translate(0px, 0px);
+      transform: translate(0px, 0px);
+    }
+    100% {
+      -webkit-transform: translate(0px, 0.5em);
+      transform: translate(0px, 0.5em);
+    }
+  }
+  @keyframes cta-button-updown {
+    0% {
+      -webkit-transform: translate(0px, 0px);
+      transform: translate(0px, 0px);
+    }
+    100% {
+      -webkit-transform: translate(0px, 0.5em);
+      transform: translate(0px, 0.5em);
+    }
+  }
+  animation: cta-button-updown 1.5s ease-out 0s infinite alternate;
+  -webkit-animation: cta-button-updown 1.5s ease-out 0s infinite alternate;
 `
 
 const CTAButton = () => {
