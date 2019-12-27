@@ -8,7 +8,6 @@ import HomeHero from "../components/home-hero"
 import BondOverlay from "../components/bond-overlay"
 import AboutIllustration from "../components/about-illustration"
 import Card from "../components/card"
-import Hidden from "../components/hidden"
 
 // Styled Components
 const Hero = styled.div`
@@ -31,6 +30,13 @@ const SubHero = styled.div`
   width: 100%;
   user-select: none;
   cursor: default;
+`
+
+const CTAContainer = styled.div`
+  align-self: start;
+  ${props => props.theme.breakpoints.lg} {
+    align-self: center;
+  }
 `
 
 const HeroSubtitle = styled.h2`
@@ -98,7 +104,9 @@ const IndexPage = () => (
         <HeroSubtitle>Coming soon</HeroSubtitle>
       </SubHero>
       <BondOverlay />
-      <CTAButton />
+      <CTAContainer>
+        <CTAButton />
+      </CTAContainer>
     </Hero>
     <About id="about">
       <TextLayout>

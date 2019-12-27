@@ -11,7 +11,7 @@ const RootContainer = styled.div`
 
 const HeroText = styled.h1`
   transition: font-size 1s;
-  font-size: 15em;
+  font-size: 12em;
   ${props => props.theme.breakpoints.md} {
     font-size: 20em;
   }

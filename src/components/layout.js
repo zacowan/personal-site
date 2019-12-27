@@ -51,6 +51,7 @@ const Layout = ({ children }) => {
         style={{
           padding: `0px 1.0875rem 1.45rem`,
           paddingTop: 0,
+          overflowX: "hidden",
         }}
       >
         <Nav />
