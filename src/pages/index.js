@@ -12,9 +12,14 @@ import Hidden from "../components/hidden"
 
 // Styled Components
 const Hero = styled.div`
-  display: flex;
+  display: grid;
+  grid-template-columns: 1 auto;
+  grid-gap: 100px;
+  justify-items: center;
   align-items: center;
-  justify-content: space-between;
+  ${props => props.theme.breakpoints.lg} {
+    grid-template-columns: repeat(2, auto);
+  }
   min-height: 100vh;
 `
 
@@ -23,21 +28,25 @@ const SubHero = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  width: 50%;
+  width: 100%;
   user-select: none;
   cursor: default;
 `
 
 const HeroSubtitle = styled.h2`
-  font-size: 1.5em;
+  font-size: 1.25em;
+  transition: font-size 1s;
   text-transform: uppercase;
   font-family: Glacial Indifference;
   font-weight: normal;
+  ${props => props.theme.breakpoints.md} {
+    font-size: 1.5em;
+  }
 `
 
 const About = styled.div`
   min-height: 100vh;
-  padding: 4em;
+  padding: 4em 0;
 `
 
 const AboutTitle = styled.h3`
@@ -64,7 +73,6 @@ const AboutIllustrationContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-bottom: 30px;
 `
 
 const AboutGrid = styled.div`
@@ -72,8 +80,8 @@ const AboutGrid = styled.div`
   grid-template-columns: 1 auto;
   grid-gap: 30px;
   justify-items: center;
-  ${props => props.theme.breakpoints.md} {
-    grid-template-columns: repeat(2, 50%);
+  ${props => props.theme.breakpoints.sm} {
+    grid-template-columns: repeat(2, auto);
   }
   ${props => props.theme.breakpoints.lg} {
     grid-template-columns: repeat(3, 33%);
@@ -90,9 +98,7 @@ const IndexPage = () => (
         <HeroSubtitle>Coming soon</HeroSubtitle>
       </SubHero>
       <BondOverlay />
-      <SubHero>
-        <CTAButton></CTAButton>
-      </SubHero>
+      <CTAButton />
     </Hero>
     <About id="about">
       <TextLayout>

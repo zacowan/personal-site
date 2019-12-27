@@ -10,7 +10,11 @@ const RootContainer = styled.div`
 `
 
 const HeroText = styled.h1`
-  font-size: 20em;
+  transition: font-size 1s;
+  font-size: 15em;
+  ${props => props.theme.breakpoints.md} {
+    font-size: 20em;
+  }
 `
 
 const Dot = styled(HeroText)`

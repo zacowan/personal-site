@@ -18,8 +18,8 @@ body {
 }
 /* Fonts */
 @font-face {
-  font-family: "MoolBoran";
-  src: url("../fonts/moolbor.ttf") format("truetype");
+  font-family: "Abril Fatface";
+  src: url("../fonts/AbrilFatface-Regular.ttf") format("truetype");
   font-display: block;
 }
 @font-face {
