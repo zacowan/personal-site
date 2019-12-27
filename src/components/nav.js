@@ -1,7 +1,6 @@
 import React, { useState } from "react"
 import { Link } from "gatsby"
 import styled from "styled-components"
-import useMediaQuery from "react-use-media-query-hook"
 
 const NavContainer = styled.div`
   padding: 2em;
@@ -25,6 +24,7 @@ const NavContainer = styled.div`
     height: auto;
     align-items: flex-end;
     opacity: 1;
+    z-index: 400;
   }
 `
 
@@ -66,6 +66,9 @@ const HamburgerContainer = styled.div`
     transform: scale(1.1);
     cursor: pointer;
   }
+  ${props => props.theme.breakpoints.lg} {
+    display: none;
+  }
 `
 
 const Icon = styled.svg`
@@ -97,7 +100,6 @@ const paths = [
 ]
 
 const Nav = () => {
-  const isComputer = useMediaQuery("(min-width: 992px)")
   const [open, setOpen] = useState(false)
   return (
     <React.Fragment>
@@ -112,18 +114,16 @@ const Nav = () => {
           </NavLink>
         ))}
       </NavContainer>
-      {!isComputer && (
-        <HamburgerContainer onClick={() => setOpen(!open)}>
-          <Icon
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-          >
-            <path d="M24 6h-24v-4h24v4zm0 4h-24v4h24v-4zm0 8h-24v4h24v-4z" />
-          </Icon>
-        </HamburgerContainer>
-      )}
+      <HamburgerContainer onClick={() => setOpen(!open)}>
+        <Icon
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+        >
+          <path d="M24 6h-24v-4h24v4zm0 4h-24v4h24v-4zm0 8h-24v4h24v-4z" />
+        </Icon>
+      </HamburgerContainer>
     </React.Fragment>
   )
 }
